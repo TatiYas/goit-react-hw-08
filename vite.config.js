@@ -14,5 +14,8 @@ export default defineConfig({
 			routes: '/src/routes',
 			constants: '/src/constants',
 		},
+		rollupOptions: {
+			external: ['react-modal']
+		  }
 	},
 });

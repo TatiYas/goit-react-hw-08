@@ -3,7 +3,12 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
 	plugins: [react()],
-	build: { sourcemap: true },
+	build: { 
+		sourcemap: true,
+		rollupOptions: {
+			external: ['react-modal']
+		}
+	},
 	resolve: {
 		alias: {
 			components: '/src/components',
@@ -13,9 +18,11 @@ export default defineConfig({
 			hooks: '/src/hooks',
 			routes: '/src/routes',
 			constants: '/src/constants',
-		},
-		rollupOptions: {
-			external: ['react-modal']
-		  }
-	},
+		}
+	}
 });
+
+
+
+
+

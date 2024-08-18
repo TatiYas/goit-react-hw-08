@@ -5,7 +5,7 @@ export default function HomePage() {
     <div className={css.container}>
       <h1 className={css.title}>Contact book </h1>
       <p className={css.text}>
-        which of your friends 
+        Which of your friends 
         really brave?
       </p>
     </div>

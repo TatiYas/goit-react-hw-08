@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { changeContact, deleteContact } from "../../redux/contacts/operations";
+import { editContact, deleteContact } from "../../redux/contacts/operations";
 import css from "./Contact.module.css";
 import Modal from "react-modal";
 import { toast } from "react-hot-toast";
@@ -40,7 +40,7 @@ const Contact = ({ id, name, number }) => {
   };
 
   const handleEdit = () => {
-    dispatch(changeContact({ contactId: id, name: newName, number: newNumber }))
+    dispatch(editContact({ contactId: id, name: newName, number: newNumber }))
       .then(() => {
         toast.success(`Contact ${name} has been updated successfully.`);
         closeEditModal();
@@ -65,7 +65,7 @@ const Contact = ({ id, name, number }) => {
         </button>
       </div>
 
-      {/* Delete Modal */}
+     
       <Modal
         isOpen={deleteModalIsOpen}
         onRequestClose={closeDeleteModal}
